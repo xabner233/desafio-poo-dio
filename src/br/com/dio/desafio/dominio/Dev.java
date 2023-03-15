@@ -7,6 +7,7 @@ import java.util.Set;
 
 public class Dev {
     private String nome;
+    private int concluidos =0;
     private Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
     protected Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
 
@@ -15,11 +16,16 @@ public class Dev {
         bootCamp.getDesvsIncritos().add(this);
     }
 
+    public int getConcluidos() {
+        return concluidos;
+    }
+
     public void  progredir() {
         Optional<Conteudo> conteudo = this.conteudosInscritos.stream().findFirst();
         if(conteudo.isPresent()){
             this.conteudosConcluidos.add(conteudo.get());
             this.conteudosInscritos.remove(conteudo.get());
+            concluidos++;
         }
         else {
             System.err.println("Você nao esta inscirto em nenhum conteudo!");
