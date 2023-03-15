@@ -40,6 +40,7 @@ public class Main {
         System.out.println("Conteudos Incritos" + devCamila.getConteudosInscritos());
         devCamila.progredir();
         devCamila.progredir();
+        System.out.println("Cusos Concluidos: "+devCamila.getConcluidos());
         System.out.println("---");
         System.out.println("Conteudos Incritos" + devCamila.getConteudosInscritos());
         System.out.println("Conteudos Concluidos" + devCamila.getConteudosConcluidos());
